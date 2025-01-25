@@ -46,7 +46,7 @@ func solve(grid [][]int) {
 	if grid[0][0] > 0 {
 		panic("The first cell must be blank")
 	}
-	for n := 1; n < SIZE+1; n++ {
+	for n := 1; n < SIZE+1; n++ { // Loop through possible numbers for the cell
 		ok, g := addNumber(n, 0, 0, grid)
 		if ok {
 			fmt.Println(g)
@@ -80,7 +80,7 @@ func addNumber(n, row, col int, grid [][]int) (bool, [][]int) {
 				}
 			}
 			if gridCopy[row][col] == 0 {
-				for i := 1; i < SIZE+1; i++ {
+				for i := 1; i < SIZE+1; i++ { // Loop through possible numbers for the cell
 					ok, g := addNumber(i, row, col, gridCopy)
 					if ok {
 						return true, g
@@ -90,7 +90,7 @@ func addNumber(n, row, col int, grid [][]int) (bool, [][]int) {
 			}
 		}
 	}
-	return false, grid
+	return false, nil
 }
 
 func rowOK(n, row int, grid [][]int) bool {
