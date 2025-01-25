@@ -1,1 +1,1 @@
-# go-brute-force-sudoku-solver
+# Golang Brute Force Sudoku Solver
